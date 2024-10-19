@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+            Kesyon
+        </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{% static 'fonts/material-design-iconic-font/css/material-design-iconic-font.css' %}">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	</head>
+	<body>
+		<div class="wrapper">
+            <form action="" id="wizard" method="post">
+				{% csrf_token %}
+        		<!-- SECTION 1 -->
+                <h2></h2>
+				{% include 'part.html' with img='https://th.bing.com/th/id/R.8d8ee41596c441246715bf8162f83e56?rik=FHQrlWb32%2b%2fvsg&pid=ImgRaw&r=0' name='answer_1' qst='Moun kibo mwen ye?' qst1=person.answer_1_question_1 qst2=person.answer_1_question_1  qst3=person.correct_answer_1 %}
+				<h2></h2>
+				{% include 'part.html' with img='https://i.etsystatic.com/31528178/r/il/70c0c7/3955059198/il_fullxfull.3955059198_7rcu.jpg'  qst='Ki dat fet mwen?' name='answer_2' qst1=person.answer_1_question_2 qst3=person.answer_1_question_2 qst2=person.correct_answer_2 %}
+				<h2></h2>
+				{% include 'part.html' with img='https://img.freepik.com/premium-photo/photo-happy-family-black-mother-daughter-generative-ai_35887-16115.jpg' name='answer_3'  qst='Ki nom Jeunne fille manmanm?' qst3=person.answer_1_question_3 qst1=person.answer_1_question_3 qst2=person.correct_answer_3 %}
+				<h2></h2>
+				{% include 'part.html' with img='https://www.newszii.com/wp-content/uploads/2018/06/First-Crush-Stories_24.jpg' qst='Koman premye crush mwen an te rele?' name='answer_4' qst1=person.answer_1_question_4 qst2=person.answer_1_question_4 qst3=person.correct_answer_4 %}
+				<h2></h2>
+				{% include 'part.html' with img='https://th.bing.com/th/id/OIP.pP9Vah35TMDYV0Bw70xCzwAAAA?rs=1&pid=ImgDetMain' qst='Ki couleur prefere m?' qst3=person.answer_1_question_5 name='answer_5' qst2=person.answer_1_question_5  qst1=person.correct_answer_5 %}
+				<h2></h2>
+
+				<section>
+					<div class="inner">
+						<div class="image-holder">
+							<img src="" style="height: 100%; object-fit: cover;" alt="">
+						</div>
+						<div class="form-content" >
+							<div class="form-header">
+								<h3>Mete nonw pou ka fini ak quiz la</h3>
+							</div>
+							<div class="form-row">
+									
+									<div class="form-check">
+										<input class="form-check-input" type="text" name="name" id="q6c">
+										<label class="form-check-label" for="q6c">Antre nonw ak siyatiw</label>
+									</div>
+								</div>
+							</div>
+							
+				<!-- 							
+							<div class="checkbox-circle">
+								<label>
+									<input type="checkbox" checked> Nor again is there anyone who loves or pursues or desires to obtaini.
+									<span class="checkmark"></span>
+								</label>
+							</div> -->
+						</div>
+					</div>
+				</section>
+
+
+				
+            </form>
+		</div>
+
+
+		<!-- JQUERY -->
+		<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+
+		<!-- JQUERY STEP -->
+		<script src="{% static 'js/jquery.steps.js' %}"></script>
+		<script src="{% static 'js/main.js' %}"></script>
+		<!-- Template created and distributed by Colorlib -->
+</body>
+</html>

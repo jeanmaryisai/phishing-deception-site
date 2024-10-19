@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success - Answers Created</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #e9f8f9; /* Light teal background */
+        }
+
+        .container {
+            background-color: #ffffff; /* White background for the content */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 30px; /* Padding inside the container */
+            margin-top: 100px; /* Space from the top */
+            text-align: center; /* Centered text */
+        }
+
+        h1 {
+            color: #28a745; /* Success green color */
+            margin-bottom: 20px; /* Space below the heading */
+        }
+
+        p {
+            color: #555; /* Dark gray for text */
+            margin-bottom: 30px; /* Space below paragraphs */
+        }
+
+        .code-box {
+            background-color: #f0f8e8; /* Light green background for the code box */
+            border: 1px solid #28a745; /* Green border */
+            padding: 15px; /* Padding inside the code box */
+            border-radius: 5px; /* Rounded corners */
+            font-family: monospace; /* Monospace font for code */
+            color: #28a745; /* Green text color */
+            position: relative; /* For positioning copy button */
+        }
+
+        .btn-copy {
+            position: absolute; /* Position button inside code box */
+            right: 10px; /* Right padding */
+            top: 10px; /* Top padding */
+            background-color: #28a745; /* Green button */
+            color: white; /* White text for button */
+        }
+
+        .btn-copy:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Success!</h1>
+        <p>Ou kreye nouvo quiz paw la... Ou ka patajel kod sa bay zanmiw... </p>
+
+        <div class="code-box">
+            <span id="unique-code">{{ unique_code }}</span> <!-- Display unique code -->
+            <button class="btn btn-copy" onclick="copyCode()">Copy Code</button>
+        </div>
+        <p>Pa bliye keu  enfomasyon sa yo ou t pataje a, moun ki fh sit la ka pranl pou li vole kont ou genyen sou entenet la. Donk nou fe sit sa pou moutrew jan li fasil pou yo vole enfomasyonw.. Tout enfomasyon ou sot bay la se enfomasyon on lot malveyan ka itilize pou antre sou kont ou tankou facebook or google... <strong>Rete veyatif</strong>
+        </p>
+    </div>
+
+    <script>
+        function copyCode() {
+            const codeElement = document.getElementById('unique-code');
+            const codeText = codeElement.innerText;
+
+            navigator.clipboard.writeText(codeText)
+                .then(() => {
+                    alert('Code copied to clipboard!');
+                })
+                .catch(err => {
+                    console.error('Error copying code: ', err);
+                    alert('Failed to copy code. Please try again.');
+                });
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

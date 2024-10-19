@@ -1,0 +1,116 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Answers</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Include your CSS file -->
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light background color */
+        }
+
+        .container {
+            background-color: #ffffff; /* White background for the form */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 30px; /* Padding inside the container */
+            margin-top: 50px; /* Margin from top */
+        }
+
+        h1 {
+            color: #5A2D8A; /* Dark purple for the heading */
+            margin-bottom: 30px; /* Space below the heading */
+            text-align: center; /* Centered heading */
+        }
+
+        .form-label {
+            color: #5A2D8A; /* Dark purple for labels */
+        }
+
+        .btn-primary {
+            background-color: #5A2D8A; /* Dark purple button color */
+            border: none; /* No border */
+        }
+
+        .btn-primary:hover {
+            background-color: #8A5D9A; /* Lighter purple on hover */
+        }
+
+        .form-control {
+            border: 1px solid #5A2D8A; /* Border color */
+            border-radius: 4px; /* Rounded corners for input fields */
+        }
+
+        .form-control:focus {
+            border-color: #8A5D9A; /* Focus border color */
+            box-shadow: 0 0 5px rgba(138, 93, 154, 0.5); /* Focus shadow */
+        }
+
+        .alternative-input {
+            margin-top: 10px; /* Space above alternative inputs */
+        }
+
+        .submit-btn {
+            margin-top: 20px; /* Space above the submit button */
+        }
+    </style>
+ 
+</head>
+<body>
+    <div class="container">
+        <h1>Kreye pwop kesyon paw</h1>
+        <h2>Atansyon pa mete bon enfomasyonw yo... Sit sa se yon sit pou sansibilisation kont hacking oswa vol enfomasyon</h2>
+        <form action='{% url "create_answers" %}' method="post">
+            {% csrf_token %}
+            
+            <div class="mb-3">
+                <label for="name" class="form-label">Ki nonw:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="answer_1_question_1" class="form-label">Moun kibo ou ye?</label>
+                <input type="text" class="form-control" id="answer_1_question_1" name="answer_1_question_1" required>
+                <input type="text" class="form-control alternative-input" name="answer_2_question_1" placeholder="Alternative answer 1">
+                <input type="text" class="form-control alternative-input" name="correct_answer_1" placeholder="Correct answer" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="answer_1_question_2" class="form-label">Kile ou fet?</label>
+                <input type="text" class="form-control" id="answer_1_question_2" name="answer_1_question_2" required>
+                <input type="text" class="form-control alternative-input" name="answer_2_question_2" placeholder="Alternative answer 1">
+                <input type="text" class="form-control alternative-input" name="correct_answer_2" placeholder="Correct answer" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="answer_1_question_3" class="form-label">Ki non jeunne fille manmanw?</label>
+                <input type="text" class="form-control" id="answer_1_question_3" name="answer_1_question_3" required>
+                <input type="text" class="form-control alternative-input" name="answer_2_question_3" placeholder="Alternative answer 1">
+                <input type="text" class="form-control alternative-input" name="correct_answer_3" placeholder="Correct answer" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="answer_1_question_4" class="form-label">Ki non premye crush a?<label>
+                <input type="text" class="form-control" id="answer_1_question_4" name="answer_1_question_4" required>
+                <input type="text" class="form-control alternative-input" name="answer_2_question_4" placeholder="Alternative answer 1">
+                <input type="text" class="form-control alternative-input" name="correct_answer_4" placeholder="Correct answer" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="answer_1_question_5" class="form-label">Ki couleur preferew?</label>
+                <input type="text" class="form-control" id="answer_1_question_5" name="answer_1_question_5" required>
+                <input type="text" class="form-control alternative-input" name="answer_2_question_5" placeholder="Alternative answer 1">
+                <input type="text" class="form-control alternative-input" name="correct_answer_5" placeholder="Correct answer" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
