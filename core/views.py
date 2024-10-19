@@ -44,7 +44,6 @@ def create_answers(request):
         # Create a new Person object
         person = Person(
             name=name,
-            unique_code=generate_unique_code(),
             answer_1_question_1=answer_1_question_1,
             answer_2_question_1=answer_2_question_1,
             correct_answer_1=correct_answer_1,
